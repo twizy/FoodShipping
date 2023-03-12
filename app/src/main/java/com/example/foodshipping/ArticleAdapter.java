@@ -46,7 +46,7 @@ public class ArticleAdapter extends ArrayAdapter<ArticleClass>{
 
         TextView addstock1 = (TextView) listViewItem.findViewById(R.id.layout_product_stock1);
         TextView addstock2 = (TextView) listViewItem.findViewById(R.id.layout_product_stock2);
-        TextView linear = (LinearLayout) listViewItem.findViewById(R.id.quantity_linear);
+        LinearLayout linear = (LinearLayout) listViewItem.findViewById(R.id.quantity_linear);
 
         ArticleClass articleClass_object = this.listObject.get(position);
 
