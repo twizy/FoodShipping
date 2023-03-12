@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button profileP, articleP, newarticleP, logoutP;
+    private FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         articleP = (Button) findViewById(R.id.articlepage);
         newarticleP = (Button) findViewById(R.id.newarticlepage);
         logoutP = (Button) findViewById(R.id.logout);
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
         profileP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,5 +46,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        logoutP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.signOut();
+                finish();
+
+            }
+        });
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(firebaseAuth.getUid() == null){
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(MainActivity.this, Login.class));
+        }
     }
 }
