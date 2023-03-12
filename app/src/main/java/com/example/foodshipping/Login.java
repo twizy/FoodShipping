@@ -111,7 +111,7 @@ public class Login extends AppCompatActivity {
                         }
                         else if (task.isSuccessful()) {
 
-                            Intent intent = new Intent(Login.this,Articles.class);
+                            Intent intent = new Intent(Login.this,MainActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                             finish();
@@ -159,7 +159,7 @@ public class Login extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if(auth.getUid() != null){
-            startActivity(new Intent(Login.this, Articles.class));
+            startActivity(new Intent(Login.this, MainActivity.class));
             finish();
         }
     }
