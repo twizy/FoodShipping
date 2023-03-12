@@ -72,9 +72,6 @@ public class Userprofile extends AppCompatActivity {
                     Toast.makeText(Userprofile.this, "Travail est vide !", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    String pattern = "dd-MM-yyyy";
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-                    String dat = simpleDateFormat.format(new Date());
 
                     HashMap<String, Object> newProd = new HashMap<>();
                     newProd.put("fullname", fullname.getText().toString());
@@ -82,8 +79,6 @@ public class Userprofile extends AppCompatActivity {
                     newProd.put("commune", commune.getText().toString());
                     newProd.put("zone", zone.getText().toString());
                     newProd.put("phone", phone.getText().toString());
-
-                    String insKey = databaseReference.push().getKey();
 
                     databaseReference.child(firebaseAuth.getCurrentUser().getUid()).updateChildren(newProd).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
