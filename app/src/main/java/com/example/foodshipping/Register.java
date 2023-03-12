@@ -103,7 +103,7 @@ public class Register extends AppCompatActivity {
                         }
                         else if (task.isSuccessful()) {
 
-                            Intent intent = new Intent(Register.this,ProductsList.class);
+                            Intent intent = new Intent(Register.this,Articles.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                             finish();
