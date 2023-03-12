@@ -1,5 +1,6 @@
 package com.example.foodshipping;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -31,13 +32,12 @@ import java.util.ArrayList;
 public class Articles extends AppCompatActivity {
 
     private ListView listView;
-    private ArrayList<ProductsClass> list;
-    private ArrayAdapter<ProductsClass> adapter;
+    private ArrayList<ArticleClass> list;
+    private ArrayAdapter<ArticleClass> adapter;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
     private DatabaseReference databaseReference;
     private ProgressDialog progressDialog = null;
-    private String stringKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +45,11 @@ public class Articles extends AppCompatActivity {
         setContentView(R.layout.activity_articles);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.article_toolbar);
-        toolbar.setTitle("Product list");
+        toolbar.setTitle("Liste des articles");
         toolbar.setTitleTextColor(getResources().getColor(R.color.black));
 
         progressDialog = new ProgressDialog(Articles.this);
-        progressDialog.setMessage("loading...");
+        progressDialog.setMessage("Patientez...");
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.show();
 
@@ -58,5 +58,44 @@ public class Articles extends AppCompatActivity {
 
         list = new ArrayList<>();
         listView = (ListView)findViewById(R.id.listview);
+    }
+
+
+    private void allDatas() {
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Demo-Minagris").child("Products");
+
+        databaseReference.child(firebaseAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                list.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    if (dataSnapshot.exists()) {
+                        ArticleClass allClientsClass = dataSnapshot.getValue(ArticleClass.class);
+                        list.add(allClientsClass);
+                        progressDialog.dismiss();
+                    } else {
+                        progressDialog.dismiss();
+                    }
+                }
+
+                ArticleAdapter notFound = new ArticleAdapter(Articles.this, list);
+                listView.setAdapter(notFound);
+                progressDialog.dismiss();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(firebaseAuth.getUid() != null){
+            allDatas();
+        }
     }
 }
