@@ -42,7 +42,8 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
             android:hint="Password"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:inputType="textPassword"/>
 
         <Button
             android:id="@+id/login"

@@ -23,7 +23,6 @@ public class Newarticle extends AppCompatActivity {
     private EditText productname,productprice,productunit;
     private Button save;
     private DatabaseReference databaseReference;
-    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +33,11 @@ public class Newarticle extends AppCompatActivity {
         toolbar.setTitle("Ajout d'article");
         toolbar.setTitleTextColor(getResources().getColor(R.color.black));
 
-        productname = (EditText) findViewById(R.id.fullname_id);
-        productunit = (EditText) findViewById(R.id.province_id);
-        productprice = (EditText) findViewById(R.id.commune_id);
+        productname = (EditText) findViewById(R.id.article_name_id);
+        productunit = (EditText) findViewById(R.id.unit_id);
+        productprice = (EditText) findViewById(R.id.price_id);
         save = (Button) findViewById(R.id.add_now_id);
 
-        firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("Demo-Minagris").child("Products");
 
         save.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +72,7 @@ public class Newarticle extends AppCompatActivity {
                             }else {
                                 Toast.makeText(Newarticle.this, "Erreur !", Toast.LENGTH_LONG).show();
                                 System.out.println(task.getException().toString()+ "\n");
+                                Toast.makeText(Newarticle.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -84,12 +83,4 @@ public class Newarticle extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if(firebaseAuth.getUid() == null){
-            firebaseAuth.signOut();
-            finish();
-        }
-    }
 }

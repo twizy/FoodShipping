@@ -7,11 +7,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,10 +22,7 @@ public class Articles extends AppCompatActivity {
 
     private ListView listView;
     private ArrayList<ArticleClass> list;
-    private ArrayAdapter<ArticleClass> adapter;
     private FirebaseAuth firebaseAuth;
-    private FirebaseUser firebaseUser;
-    private DatabaseReference databaseReference;
     private ProgressDialog progressDialog = null;
 
     @Override
@@ -45,7 +40,6 @@ public class Articles extends AppCompatActivity {
         progressDialog.show();
 
         firebaseAuth = FirebaseAuth.getInstance();
-        firebaseUser = firebaseAuth.getCurrentUser();
 
         list = new ArrayList<>();
         listView = (ListView)findViewById(R.id.listview);
@@ -54,9 +48,9 @@ public class Articles extends AppCompatActivity {
 
     private void allDatas() {
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Demo-Minagris").child("Products");
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Demo-Minagris").child("Products");
 
-        databaseReference.child(firebaseAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();

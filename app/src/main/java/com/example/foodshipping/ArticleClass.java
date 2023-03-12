@@ -2,9 +2,17 @@ package com.example.foodshipping;
 
 public class ArticleClass {
 
-    String productname, productunit, productprice, productKey;
+    String productKey,productname,productprice,productunit;
 
     public ArticleClass() {
+    }
+
+    public String getProductKey() {
+        return productKey;
+    }
+
+    public void setProductKey(String productKey) {
+        this.productKey = productKey;
     }
 
     public String getProductname() {
@@ -15,14 +23,6 @@ public class ArticleClass {
         this.productname = productname;
     }
 
-    public String getProductunit() {
-        return productunit;
-    }
-
-    public void setProductunit(String productunit) {
-        this.productunit = productunit;
-    }
-
     public String getProductprice() {
         return productprice;
     }
@@ -31,11 +31,11 @@ public class ArticleClass {
         this.productprice = productprice;
     }
 
-    public String getProductKey() {
-        return productKey;
+    public String getProductunit() {
+        return productunit;
     }
 
-    public void setProductKey(String productKey) {
-        this.productKey = productKey;
+    public void setProductunit(String productunit) {
+        this.productunit = productunit;
     }
 }

@@ -70,11 +70,6 @@ public class Register extends AppCompatActivity {
 
     private void signupUser() {
 
-        if(!isNetworkTurnedOn(this)){
-            Toast.makeText(this, "Internet is unavailable !", Toast.LENGTH_SHORT).show();
-        }
-        else{
-
             String emaU = usernameEdx.getText().toString().trim();
             String passU = passwordEdx.getText().toString().trim();
 
@@ -115,18 +110,6 @@ public class Register extends AppCompatActivity {
 
             }
 
-        }
     }
 
-    private boolean isNetworkTurnedOn(Register login) {
-        ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo wifiInfo = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        NetworkInfo mobileInfo = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-
-        if((wifiInfo != null && wifiInfo.isConnected()) || (mobileInfo != null && mobileInfo.isConnected())){
-            return true;
-        }else {
-            return false;
-        }
-    }
 }

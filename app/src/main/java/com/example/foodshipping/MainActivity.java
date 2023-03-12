@@ -53,14 +53,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        logoutP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                firebaseAuth.signOut();
-                finish();
-
-            }
-        });
-
     }
 }
