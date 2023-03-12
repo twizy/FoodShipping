@@ -1,6 +1,7 @@
 package com.example.foodshipping;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,10 +14,15 @@ public class MainActivity extends AppCompatActivity {
 
     private Button profileP, articleP, newarticleP, logoutP;
     private FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        toolbar.setTitle("Profiles");
+        toolbar.setTitleTextColor(getResources().getColor(R.color.black));
 
         profileP = (Button) findViewById(R.id.profilepage);
         articleP = (Button) findViewById(R.id.articlepage);
@@ -28,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         profileP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Userprofile.class));
+                Intent intent = new Intent(MainActivity.this, Userprofile.class);
+                startActivity(intent);
             }
         });
 
@@ -55,15 +62,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if(firebaseAuth.getUid() == null){
-            firebaseAuth.signOut();
-            finish();
-            startActivity(new Intent(MainActivity.this, Login.class));
-        }
     }
 }
