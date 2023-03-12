@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 public class Userprofile extends AppCompatActivity {
 
-    private EditText fullname,province,commune,zone,phone;
+    private EditText fullname,province,commune,zone,phone,work;
     private Button save;
     private DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
@@ -44,6 +44,7 @@ public class Userprofile extends AppCompatActivity {
         commune = (EditText) findViewById(R.id.commune_id);
         zone = (EditText) findViewById(R.id.zone_id);
         phone = (EditText) findViewById(R.id.phone_id);
+        work = (EditText) findViewById(R.id.work_id);
         save = (Button) findViewById(R.id.save_id);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -66,6 +67,9 @@ public class Userprofile extends AppCompatActivity {
                 }
                 else if(phone.getText().toString().isEmpty()){
                     Toast.makeText(Userprofile.this, "Phone est vide !", Toast.LENGTH_SHORT).show();
+                }
+                else if(work.getText().toString().isEmpty()){
+                    Toast.makeText(Userprofile.this, "Travail est vide !", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     String pattern = "dd-MM-yyyy";

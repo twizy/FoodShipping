@@ -44,8 +44,7 @@
             android:textSize="28sp"
             android:layout_marginLeft="10sp"
             android:layout_marginRight="10sp"
-            android:layout_marginBottom="10sp"
-            android:inputType="number"/>
+            android:layout_marginBottom="10sp"/>
 
         <EditText
             android:id="@+id/zone_id"
@@ -55,8 +54,7 @@
             android:textSize="28sp"
             android:layout_marginLeft="10sp"
             android:layout_marginRight="10sp"
-            android:layout_marginBottom="10sp"
-            android:inputType="number"/>
+            android:layout_marginBottom="10sp"/>
 
         <EditText
             android:id="@+id/phone_id"
@@ -68,6 +66,16 @@
             android:layout_marginRight="10sp"
             android:layout_marginBottom="10sp"
             android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/work_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="* Work"
+            android:textSize="28sp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginBottom="10sp"/>
 
         <Button
             android:id="@+id/save_id"
