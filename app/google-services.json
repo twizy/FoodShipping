@@ -1,0 +1,179 @@
+{
+  "project_info": {
+    "project_number": "161247734936",
+    "firebase_url": "https://demos-779b6-default-rtdb.firebaseio.com",
+    "project_id": "demos-779b6",
+    "storage_bucket": "demos-779b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161247734936:android:8fab107e510de0d56e34ed",
+        "android_client_info": {
+          "package_name": "com.cool.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161247734936-8d41hq6u9386ua8gat29ldno5l8pom3e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cool.demo",
+            "certificate_hash": "77b2c90a7de1bfefb1fa088f7ae738fe34101a8d"
+          }
+        },
+        {
+          "client_id": "161247734936-3081u22i88l8beublsfa6ib10rhh1o09.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5autyDsRK2JOW5UMgfMhJpF7LEoUmSMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161247734936-3081u22i88l8beublsfa6ib10rhh1o09.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "161247734936-dqf9bqqtffdg60smp0fu8odkoj558oqg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Uburundi-Soft.YoMoneyiOs"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161247734936:android:08fb829079d61c3c6e34ed",
+        "android_client_info": {
+          "package_name": "com.cool.kotlinpro.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161247734936-4a5fv2n3rht0iv3a3lesukq2kpj7hqk7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cool.kotlinpro.android",
+            "certificate_hash": "77b2c90a7de1bfefb1fa088f7ae738fe34101a8d"
+          }
+        },
+        {
+          "client_id": "161247734936-3081u22i88l8beublsfa6ib10rhh1o09.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5autyDsRK2JOW5UMgfMhJpF7LEoUmSMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161247734936-3081u22i88l8beublsfa6ib10rhh1o09.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "161247734936-dqf9bqqtffdg60smp0fu8odkoj558oqg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Uburundi-Soft.YoMoneyiOs"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161247734936:android:0a746ba10092d3456e34ed",
+        "android_client_info": {
+          "package_name": "com.example.foodshipping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161247734936-3081u22i88l8beublsfa6ib10rhh1o09.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5autyDsRK2JOW5UMgfMhJpF7LEoUmSMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161247734936-3081u22i88l8beublsfa6ib10rhh1o09.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "161247734936-dqf9bqqtffdg60smp0fu8odkoj558oqg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Uburundi-Soft.YoMoneyiOs"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161247734936:android:b3a4d89a20160ba26e34ed",
+        "android_client_info": {
+          "package_name": "com.example.muco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161247734936-8ifj7u832jepm8cmjasfc8v54inv195o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.muco",
+            "certificate_hash": "c831749f052c8918932ee9e99ae0b5380513dd25"
+          }
+        },
+        {
+          "client_id": "161247734936-3081u22i88l8beublsfa6ib10rhh1o09.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5autyDsRK2JOW5UMgfMhJpF7LEoUmSMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161247734936-3081u22i88l8beublsfa6ib10rhh1o09.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "161247734936-dqf9bqqtffdg60smp0fu8odkoj558oqg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Uburundi-Soft.YoMoneyiOs"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
