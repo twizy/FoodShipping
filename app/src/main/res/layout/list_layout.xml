@@ -32,19 +32,29 @@
                 android:id="@+id/layout_product_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Television"
+                android:hint="Article"
                 android:layout_marginLeft="5dp"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:layout_weight="1.5"/>
+                android:layout_weight="1.90"/>
 
             <TextView
-                android:id="@+id/layout_product_status"
+                android:visibility="visible"
+                android:id="@+id/layout_product_stock1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="0 %"
+                android:text="Afficher"
                 android:textSize="18sp"
-                android:layout_weight="0.5"/>
+                android:layout_weight="0.10"/>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/layout_product_stock2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ajouter"
+                android:textSize="18sp"
+                android:layout_weight="0.10"/>
 
         </LinearLayout>
 
@@ -59,51 +69,43 @@
                 android:id="@+id/layout_product_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="2.000.000"
+                android:hint="Prix"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:textSize="18sp"/>
 
             <TextView
-                android:id="@+id/layout_product_balance"
+                android:id="@+id/layout_product_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="1.000.000"
+                android:hint="Unité"
                 android:layout_weight="1"
                 android:textSize="18sp"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="40dp"
+            android:id="@+id/quantity_linear"
+            android:visibility="gone"
+            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3">
 
             <TextView
-                android:id="@+id/layout_product_added_by"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Alan"
+                android:hint="Quantité du stock"
                 android:layout_marginLeft="5dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:textSize="18sp"/>
 
-            <TextView
-                android:id="@+id/layout_product_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="Date"
-                android:layout_weight="1"
-                android:textSize="18sp"/>
-
-            <TextView
-                android:id="@+id/layout_reduce"
+            <EditText
+                android:id="@+id/layout_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:paddingEnd="10dp"
                 android:textSize="18sp"/>
 
         </LinearLayout>
